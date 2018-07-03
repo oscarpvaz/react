@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm config get prefix'
+                sh 'sudo chown -R $(whoami) $(npm config get prefix)/{usr/local}'
                 sh 'npm install'
                 sh 'npm cache clean -f'
             }
