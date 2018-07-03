@@ -12,9 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}'
-                sh 'npm install'
-                sh 'npm cache clean -f'
+                sh 'sudo npm install npm -g'
             }
         }
         stage('Test') {
