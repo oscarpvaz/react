@@ -13,7 +13,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm config get prefix'
-                sh 'sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}'
                 sh 'npm install'
                 sh 'npm cache clean -f'
             }
